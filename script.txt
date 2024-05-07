@@ -1,0 +1,25 @@
+<?php
+// Проверка наличия переданных параметров
+if (count($argv) != 3) {
+    echo "Неверное количество параметров." . PHP_EOL;
+    echo "Пример использования: php timer_script.php <время_в_сек> <шаг_в_сек>" . PHP_EOL;
+    exit(1);
+}
+
+// Получение параметров таймера из аргументов командной строки
+$totalTime = (int)$argv[1];
+$step = (int)$argv[2];
+
+// Инициализация начальных значений
+$elapsedTime = 0;
+
+// Организация таймера и вывод информации
+while ($elapsedTime <= $totalTime) {
+    $remainingTime = $totalTime - $elapsedTime;
+    echo "Прошло времени: $elapsedTime сек. Осталось времени: $remainingTime сек." . PHP_EOL;
+    sleep($step);
+    $elapsedTime += $step;
+}
+
+echo "Таймер завершил свою работу." . PHP_EOL;
+?>
