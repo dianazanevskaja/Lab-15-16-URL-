@@ -1,3 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Вход</title>
+</head>
+<body>
+    <h2>Форма входа</h2>
+    <form action="authenticate.php" method="POST">
+        <label for="email">Email:</label>
+        <input type="email" name="email" required><br>
+
+        <label for="password">Пароль:</label>
+        <input type="password" name="password" required><br>
+
+        <input type="submit" value="Войти">
+    </form>
+</body>
+</html>
+
 <?php
 // Подключение к базе данных MySQL
 $servername = "localhost";
